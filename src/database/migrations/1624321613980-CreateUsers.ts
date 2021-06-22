@@ -1,5 +1,6 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
+//CRIANDO TABELAS NO BANCO DE DADOS VIA MIGRATIONS DA ORM
 export class CreateUsers1624321613980 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {

@@ -16,3 +16,12 @@
  *      "description" : "teclado bom"
  * }
  */
+
+/**
+ * entity (User) <=> ORM <=> DB
+ * repositorio é toda camada que faz a ligação com o nosso banco de dados
+ */
+
+/**
+ * server -> (controller) -> service ->repositories -> banco de dados
+ */

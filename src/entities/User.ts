@@ -1,4 +1,10 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import {v4 as uuid} from "uuid";
+/**
+ * versão 4 numeros aleatorios
+ * versão 1 por tempo e mac
+ * versão 3 e 5 são id gerados por hash
+ */
 
 @Entity("users") // referencia a tabela de usuarios
 class User {
@@ -19,7 +25,14 @@ class User {
     created_at : Date;
 
     @UpdateDateColumn()
-    updated_at : Date; 
+    updated_at : Date;
+    
+    constructor(){
+        //verificando se o id está preenchido
+        if(!this.id){
+            this.id = uuid();
+        }
+    }
 }
-//59:06
+
 export { User };
