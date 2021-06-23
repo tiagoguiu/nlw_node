@@ -23,10 +23,10 @@ export class CreateTags1624407493026 implements MigrationInterface {
                        default : "now()"
                    },
                    {
-                       name : " updated_at",
+                       name : "updated_at",
                        type : "timestamp",
                        default : "now()"
-                   }
+                   },//esse ponto e virgula é necessario
                ]
            })
         );
