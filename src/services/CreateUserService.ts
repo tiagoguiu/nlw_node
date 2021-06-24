@@ -1,17 +1,19 @@
 import { UserRepositories } from "../repositories/UsersRepositories";
 import {getCustomRepository} from "typeorm";
+import { hash } from "bcryptjs"
 
 
 interface IUserRequest{
     name : string;
     email : string;
     admin? : boolean;
+    password : string;
 }
 
 
 
 class CreateUserService{
-    async execute( { name , email , admin }:IUserRequest){
+    async execute( { name , email , admin , password}:IUserRequest){
         const usersRepository = getCustomRepository(UserRepositories);
 //não é possivel fazer instancia do userrepositories() porque queremos utilizar um repositorio custormizado
 
@@ -25,11 +27,14 @@ class CreateUserService{
         if(userAreadyExists){
             throw new Error("O usuário já existe");
         }
+        //criptografando senha
+        const passwordHash = await hash(password, 8)
 
         const user = usersRepository.create({//Não precisa ser assincrono
             name,
             email,
-            admin
+            admin,
+            password: passwordHash,//atribuindo o valor criptografado a variavel antiga
         });
 
         await usersRepository.save(user);

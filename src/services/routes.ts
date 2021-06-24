@@ -2,10 +2,12 @@ import { Router } from "express";
 import { CreateUserController} from "../controllers/CreateUserController";
 import { CreateTagController } from "../controllers/CreateTagController";
 import { ensureAdmin } from "../middlewares/ensureAdmins";
+import { AuthenticateUserController } from "../controllers/AuthenticateUserController";
 const router = Router();
 
 const createUserController = new CreateUserController();
 const createTagController = new CreateTagController();
+const authenticateUserController = new AuthenticateUserController();
 
 //rotas para usuarios localhost:3000/users SEMPRE NO PLURAL
 router.post("/users", createUserController.handle);
@@ -13,6 +15,8 @@ router.post("/users", createUserController.handle);
 
 router.post("/tags", ensureAdmin ,createTagController.handle);
 //rota para tags localhost:3000/tags
+
+router.post("/login", authenticateUserController.handle);
 
 
 export{ router };

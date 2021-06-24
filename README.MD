@@ -12,6 +12,7 @@
     - TYPEORM
     - MIGRATIONS
     - AUTHENTICAÇÃO JWT
+    - ENCRIPTAÇÃO DE SENHAS COM BIBLIOTECA BCRYPTJS
 <!--te-->
 =========
 
