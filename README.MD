@@ -4,7 +4,7 @@
 ![Badge](https://img.shields.io/badge/API--Rest-Back--End-Blue)
 
 >## Conteudos
-=========
+
 <!--ts-->
     - NODE.JS
     - TYPESCRIPT
@@ -14,7 +14,6 @@
     - AUTHENTICAÇÃO JWT
     - ENCRIPTAÇÃO DE SENHAS COM BIBLIOTECA BCRYPTJS
 <!--te-->
-=========
 
 >### Regras Aplicação
 - Cadastro de Usuário : 
