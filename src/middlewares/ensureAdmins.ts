@@ -12,7 +12,6 @@ export async function ensureAdmin(request:Request, response:Response, next:NextF
 
     const { admin } = await usersRepositories.findOne(user_id);
 
-    //38:50
     
 
     if(admin){

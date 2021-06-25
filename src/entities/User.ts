@@ -1,5 +1,6 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import {v4 as uuid} from "uuid";
+import { Exclude } from "class-transformer";
 /**
  * versão 4 numeros aleatorios
  * versão 1 por tempo e mac
@@ -18,8 +19,13 @@ class User {
     @Column()
     email : string;
 
+    @Exclude()
     @Column()
     password : string;
+    /**
+    * passando a exclusão da senha feita pelo exclude do class 
+    * transformer para não retornarmos a senha quando o metodo for get users
+    */
 
     @Column()
     admin : boolean;
